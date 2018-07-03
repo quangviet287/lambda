@@ -20,12 +20,20 @@ public class Person {
     Sex gender;
     String emailAddress;
 
+    public String getName() {
+        return name;
+    }
+
     public Sex getGender() {
         return gender;
     }
 
     public int getAge(){
         return birthday.until(IsoChronology.INSTANCE.dateNow()).getYears();
+    }
+
+    public LocalDate getBirthday() {
+        return birthday;
     }
 
     public String getEmailAddress() {
@@ -36,11 +44,15 @@ public class Person {
         System.out.println(name + ", " + this.getAge());
     }
 
+    public static int compareByAge(Person a, Person b){
+        return a.birthday.compareTo(b.birthday);
+    }
+
     public static List<Person> creatListPerson() {
         List<Person> list = new ArrayList<>();
         list.add(new Person("a", IsoChronology.INSTANCE.date(1991, 7, 8), Sex.MALE, "a@s.com"));
         list.add(new Person("b", IsoChronology.INSTANCE.date(1992, 7, 6), Sex.MALE, "b@s.com"));
-        list.add(new Person("c", IsoChronology.INSTANCE.date(1993, 7, 16), Sex.FEMALE, "c@s.com"));
+        list.add(new Person("c", IsoChronology.INSTANCE.date(2001, 7, 16), Sex.FEMALE, "c@s.com"));
         list.add(new Person("d", IsoChronology.INSTANCE.date(1996, 7, 28), Sex.MALE, "d@s.com"));
         list.add(new Person("e", IsoChronology.INSTANCE.date(2000, 7, 28), Sex.MALE, "d@s.com"));
         return list;
