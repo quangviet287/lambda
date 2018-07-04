@@ -1,7 +1,6 @@
-package lambdaExpressions;
+package lambdaExpressions.reduction;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class Parallelism {
     public static void main(String[] args) {

@@ -2,7 +2,6 @@ package lambdaExpressions.reduction;
 
 import lambdaExpressions.Person;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -19,10 +18,13 @@ public class Reduction {
 
         System.out.println(totalAge + "----" + totalAgeReduce);
 
+        System.out.println(lists.stream().filter(p->p.getGender()==Person.Sex.MALE).mapToInt(Person::getAge).average().getAsDouble());
         //Stream.collect
+        System.out.println("-----------------Stream collect--------------------");
         Averager averagerCollect = lists.stream()
                 .filter(p->p.getGender()==Person.Sex.MALE).map(Person::getAge).collect(Averager::new,Averager::accept,Averager::combine);
         System.out.println(averagerCollect.average());
+        System.out.println("-----------------Stream collect--------------------");
 
         // puts the names of the male members in a collection with the collect operation:
         List<String> nameOfMaleMembers = lists.stream().filter(p->p.getGender()== Person.Sex.MALE).map(p->p.getName()).collect(Collectors.toList());
