@@ -1,17 +1,12 @@
 package javaNIO.companies;
 
-import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.LineIterator;
 
 import java.io.*;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class TestReadCompaniesFile {
     public static void main(String[] args) {
